@@ -1,7 +1,8 @@
 <?php
-// Includi il file di autoloading di Composer
+// Includo il file di autoloading di Composer
 require 'vendor/autoload.php';
 
+// configurazione cors
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type");
@@ -19,8 +20,6 @@ $emailsJSON = file_get_contents('php://input');
 
 // Decodifica il JSON in un array PHP
 $emails = json_decode($emailsJSON, true);
-
-$allEmails = [];
 
 $mail = new PHPMailer(true); // True abilita le eccezioni
 

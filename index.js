@@ -3,9 +3,7 @@ const emailForm = document.getElementById("emailForm");
 const inputMailField = document.getElementById("inputField")
 const objectField = document.getElementById("objectField")
 const descriptionField = document.getElementById("descriptionField")
-
 const emailsList = document.getElementById("emailsList")
-//const deleteEmailButton = document.getElementById("deleteEmailButton")
 const sendAllEmailButton = document.getElementById("sendAllEmailButton")
 
 const spinner = document.getElementsByClassName("loader")[0]
@@ -15,8 +13,6 @@ let arrayOfEmails = []
 
 const deleteEmail = (i, mail) => {
     console.log("eliminazione partita" + i)
-
-    //const emailToEliminate = document.getElementById("deleteEmailButton" + i).previousElementSibling.textContent
 
     arrayOfEmails = arrayOfEmails.filter(object => object.email !== mail)
 
@@ -82,6 +78,15 @@ sendAllEmailButton.addEventListener("click", () => {
             spinner.style.display = "none"
             console.log('Email inviate con successo!');
             alert("Email inviate con successo!")
+
+            // svuoto array, nodi figli, campi input
+            arrayOfEmails = []
+            emailsList.innerHTML = ""
+            inputMailField.value = ""
+            objectField.value = ""
+            descriptionField.value = ""
+
+
         })
         .catch(error => {
             console.error(error.message);
