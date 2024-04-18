@@ -8,23 +8,35 @@
 </head>
 <body>
 
-    <h1>Gestore email!</h1>
+    <h1 style="text-align: center;">Gestore email!</h1>
 
     <form id="emailForm">
 
-        <label>Inserisci mail</label>
+        <label>Inserisci email destinatario</label>
 
-        <input type="email" name="emails[]" id="inputField" placeholder="mario.rossi@gmail.com" required>
+        <div>
 
-        <button>Aggiungi</button>
+            <input type="email" name="emails[]" id="inputField" placeholder="mario.rossi@gmail.com" required>
+
+            <button>Aggiungi</button>
+
+        </div>
 
     </form>
 
+    <span class="loader"></span>
+
     <div id="emailsBox">
 
-        <h3>Lista di email da inviare</h3>
+        <div style="margin-bottom: 50px;">
 
-        <button id="sendAllEmailButton" type="submit">Invia tutte</button>
+            <h2 id="secondaryTitle">Lista email destinatari da inviare</h2>
+
+            <div style="text-align: center;">
+                <button id="sendAllEmailButton" type="submit">Invia le email</button>
+            </div>
+
+        </div>
 
         <div id="emailsList"></div>
     </div>

@@ -4,6 +4,8 @@ const emailsList = document.getElementById("emailsList")
 const deleteEmailButton = document.getElementById("deleteEmailButton")
 const sendAllEmailButton = document.getElementById("sendAllEmailButton")
 
+const spinner = document.getElementsByClassName("loader")[0]
+
 let arrayOfEmails = []
 
 const deleteEmail = (i) => {
@@ -36,9 +38,10 @@ emailForm.addEventListener("submit", (e) => {
 
         for (let i = 0; i < arrayOfEmails.length; i++) {
             const newEmail = document.createElement("div");
+            newEmail.classList.add("singleEmail")
             newEmail.innerHTML = `
             <span>${arrayOfEmails[i]}</span>
-            <button id="deleteEmailButton${i}" onclick="deleteEmail(${i})">Elimina</button
+            <button class="deleteButton" id="deleteEmailButton${i}" onclick="deleteEmail(${i})">Elimina</button
             `
             emailsList.appendChild(newEmail)
         }
@@ -51,25 +54,9 @@ emailForm.addEventListener("submit", (e) => {
 
 sendAllEmailButton.addEventListener("click", () => {
 
+    spinner.style.display = "block"
+
     console.log("metodo invio email")
-
-    /*fetch('http://localhost/TASK 2/mailSender.php', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ array: arrayOfEmails })
-    })
-        .then(function (response) {
-            return response.text();
-        })
-        .then(function (data) {
-            console.log('Risposta dal server:', data);
-        })
-        .catch(function (error) {
-            console.error('Errore nella richiesta Fetch:', error);
-        });*/
-
 
     // Creiamo un oggetto FormData per inviare i dati al file PHP
     const formData = new FormData();
@@ -86,6 +73,7 @@ sendAllEmailButton.addEventListener("click", () => {
             if (!response.ok) {
                 throw new Error('Si è verificato un errore durante l\'invio delle email: ' + response.statusText);
             }
+            spinner.style.display = "none"
             console.log('Email inviate con successo!');
             alert("Email inviate con successo!")
         })

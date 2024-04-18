@@ -14,19 +14,12 @@ $dotenv->load();
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-// Ottieni gli indirizzi email dall'array $_POST
-//$emails = $_POST['emails'];
-
-//$data = json_decode(file_get_contents('php://input'), true);
-
 $arrayRicevuto = $_POST['emails'];
 $allEmails = [];
 
 $mail = new PHPMailer(true); // True abilita le eccezioni
 
 foreach ($arrayRicevuto as $email) {
-
-    //$allEmails[] = $email;
 
     // Configura il server SMTP
     // La mia prova è stata fatta con Gmail
@@ -60,6 +53,4 @@ foreach ($arrayRicevuto as $email) {
     $mail->clearAddresses();
 
 }
-//var_dump($allEmails);
-
 ?>
