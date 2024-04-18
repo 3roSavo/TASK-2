@@ -1,0 +1,13 @@
+{
+    "name": "vendor/name",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Eros Savogin"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^6.9",
+        "vlucas/phpdotenv": "^5.6"
+    }
+}
