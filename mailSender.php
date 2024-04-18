@@ -28,7 +28,6 @@ foreach ($arrayRicevuto as $email) {
 
     //$allEmails[] = $email;
 
-
     // Configura il server SMTP
     // La mia prova è stata fatta con Gmail
     $mail->isSMTP(); 
