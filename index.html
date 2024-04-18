@@ -12,15 +12,34 @@
 
     <form id="emailForm">
 
-        <label>Inserisci email destinatario</label>
-
+        
         <div>
 
-            <input type="email" name="emails[]" id="inputField" placeholder="mario.rossi@gmail.com" required>
+            <div style="margin-bottom: 15px;">
 
-            <button>Aggiungi</button>
+                <div>Inserisci email destinatario</div>
+                <input type="email" name="emails[]" id="inputField" placeholder="mario.rossi@gmail.com" required>
 
+            </div>
+
+            <div style="margin-bottom: 15px;">
+
+                <div>Oggetto</div>
+                <input type="text" id="objectField" placeholder="titolo mail" required>
+
+            </div>
+
+            <div style="margin-bottom: 15px;">
+
+                <div>Descrizione</div>
+
+                <textarea id="descriptionField" placeholder="descrizione mail" cols="40" rows="5" required></textarea>
+
+            </div>
+            
         </div>
+        
+        <button>Aggiungi alla lista</button>
 
     </form>
 
