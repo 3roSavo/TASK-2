@@ -1,9 +1,15 @@
-1) Assicurati di avere installato PHP nel tuo sistema
+# Progetto di Invio Email
 
-la directory vendor con il gestore dipendenze Composer è già presente, quindi non dovrebbe essere necessaria la sua installazione nel sistema operativo
- 
-2) creare un file .env e compilarlo (viene in aiuto il file env.example).
+## Requisiti
+1. Assicurati di avere installato PHP nel tuo sistema.
+2. Crea un file `.env` e compila le variabili di ambiente necessarie (puoi usare il file `env.example` come riferimento).
+3. Assicurati di avere un server web attivo (puoi utilizzare XAMPP, WAMP, MAMP o un altro server locale).
+4. La cartella del progetto deve essere posizionata nella directory `htdocs` (o `www` per alcuni server) per essere accessibile tramite il browser.
 
-Seguire le istruzioni a schermo per riempire una lista di email da inviare succesivamente in simultanea al clic di un pulsante.
+## Avvio del Progetto
+1. Avvia il server web locale.
+2. Apri il browser e vai all'URL `http://localhost/nome_cartella_progetto`, oppure, comodamente, puoi raggiungere il sito con l'estensione gratuita `Live server (Five Server)` di visual studio code.
+3. Segui le istruzioni a schermo per riempire una lista di email da inviare in simultanea al clic di un pulsante.
 
-L'applicazione mira ad avere feature funzionanti piuttosto che un design ottimizzato e responsive.
+## Note
+- Questa applicazione è progettata per avere funzionalità essenziali piuttosto che un design ottimizzato e responsive.
